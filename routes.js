@@ -27,14 +27,28 @@ const routes = {
     logout : LOGOUT,
     search : SEARCH,
     users : USERS,
-    user_detail : USER_DETAIL,
-    edit_profile : EDIT_PROFILE,
-    change_password : CHANGE_PASSWORD,
+    userDetail : (id)=>{
+        if(id){
+            return `/users/${id}`;
+        }
+        else{
+            return USER_DETAIL;
+        }
+    },
+    editProfile : EDIT_PROFILE,
+    changePassword : CHANGE_PASSWORD,
     videos : VIDEOS,
     upload : UPLOAD,
-    video_detail : VIDEO_DETAIL,
-    edit_video : EDIT_VIDEO,
-    delete_video : DELETE_VIDEO
+    videoDetail : (id)=>{
+        if(id){
+            return `/videos/${id}`;
+        }
+        else{
+            return VIDEO_DETAIL;
+        }
+    },
+    editVideo : EDIT_VIDEO,
+    deleteVideo : DELETE_VIDEO
 };
 
 export default routes;

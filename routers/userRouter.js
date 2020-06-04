@@ -8,9 +8,9 @@ import { users, user_detail, edit_profile, change_password } from "../controller
 const userRouter = express.Router();
 
 userRouter.get(routes.users,users);
-userRouter.get(routes.edit_profile, edit_profile);
-userRouter.get(routes.change_password, change_password);
-userRouter.get(routes.user_detail,user_detail);
+userRouter.get(routes.editProfile, edit_profile);
+userRouter.get(routes.changePassword, change_password);
+userRouter.get(routes.userDetail(),user_detail);
 
 
 
