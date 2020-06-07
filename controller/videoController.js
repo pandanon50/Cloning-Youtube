@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import routes from '../routes';
 import Video from '../model/Video';
 
@@ -15,7 +16,8 @@ export const search = (req, res) => {
     const {
         query: { term: searchingBy },
     } = req;
-    res.render('search', { pageTitle: 'search', searchingBy, videos });
+
+    res.render('search', { pageTitle: 'search', searchingBy });
 };
 
 export const getUpload = (req, res) => res.render('upload', { pageTitle: 'upload' });
@@ -27,11 +29,11 @@ export const postUpload = async (req, res) => {
     } = req;
     const newVideo = await Video.create({
         fileUrl: path,
-        title: title,
-        description: description,
+        title,
+        description,
     });
     console.log(newVideo);
-    //To Do : Upload and save video
+    // To Do : Upload and save video
     res.redirect(routes.videoDetail(newVideo.id));
 };
 
