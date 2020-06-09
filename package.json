@@ -4,7 +4,7 @@
     "description": "Cloning Youtube",
     "main": "index.js",
     "scripts": {
-        "dev:server": "nodemon --exec babel-node init.js --delay 2",
+        "dev:server": "nodemon --exec babel-node init.js --delay 2  --ignore 'scss' ",
         "dev:assets": "set WEBPACK_ENV=development&&webpack -w",
         "bulid:assets": "set WEBPACK_ENV=production&&webpack"
     },
