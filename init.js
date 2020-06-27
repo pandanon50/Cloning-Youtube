@@ -1,9 +1,12 @@
 import app from './app';
 import './db';
+// eslint-disable-next-line import/order
 import dotenv from 'dotenv';
-dotenv.config();
 import './model/Video';
 import './model/Comment';
+import './model/User';
+
+dotenv.config();
 
 const PORT = process.env.PORT || 4000;
 
