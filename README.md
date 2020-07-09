@@ -4,13 +4,13 @@ practice clonecoding
 
 ## pages
 
-- [ ] home
-- [ ] Join
-- [ ] Login
-- [x] Search
-- [ ] User Detail
-- [ ] Edit Profile
-- [ ] Change Password
-- [ ] Upload
-- [ ] video Detail
-- [ ] Edit Video 
+-   [x] home
+-   [x] Join
+-   [x] Login
+-   [x] Search
+-   [ ] User Detail
+-   [ ] Edit Profile
+-   [ ] Change Password
+-   [x] Upload
+-   [x] video Detail
+-   [x] Edit Video

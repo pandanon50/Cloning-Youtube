@@ -1,9 +1,10 @@
 import passport from 'passport';
 import GithubStrategy from 'passport-github';
+import FacebookStrategy from 'passport-facebook';
 import dotenv from 'dotenv';
 import User from './model/User';
 import routes from './routes';
-import { githubLoginCallback } from './controller/userController';
+import { githubLoginCallback, facebookLoginCallback } from './controller/userController';
 
 dotenv.config();
 
@@ -17,6 +18,19 @@ passport.use(
             callbackURL: `http://localhost:8000${routes.githubCallback}`,
         },
         githubLoginCallback
+    )
+);
+
+passport.use(
+    new FacebookStrategy(
+        {
+            clientID: process.env.FB_ID,
+            clientSecret: process.env.FB_SECRET,
+            callbackURL: `https://chilly-dodo-83.serverless.social${routes.facebookCallback}`,
+            profileFields: ['id', 'displayName', 'photos', 'email'],
+            scope: ['public_profile', 'email'],
+        },
+        facebookLoginCallback
     )
 );
 
