@@ -13,6 +13,8 @@ import {
     getMe,
     facebookLogin,
     postFacebookLogin,
+    kakaoLogin,
+    postKakaoLogin,
 } from '../controller/userController';
 import { onlyPublic, onlyPrivate } from '../middlewares';
 
@@ -34,5 +36,14 @@ globalRouter.get(routes.me, getMe);
 
 globalRouter.get(routes.facebook, facebookLogin);
 globalRouter.get(routes.facebookCallback, passport.authenticate('facebook', { failureRedirect: '/login' }), postFacebookLogin);
+
+globalRouter.get(routes.kakao, kakaoLogin);
+globalRouter.get(
+    routes.kakoCallback,
+    passport.authenticate('kakao', {
+        failureRedirect: '#!/login',
+    }),
+    postKakaoLogin
+);
 
 export default globalRouter;

@@ -1,10 +1,11 @@
 import passport from 'passport';
 import GithubStrategy from 'passport-github';
 import FacebookStrategy from 'passport-facebook';
+import KakaoStrategy from 'passport-kakao';
 import dotenv from 'dotenv';
 import User from './model/User';
 import routes from './routes';
-import { githubLoginCallback, facebookLoginCallback } from './controller/userController';
+import { githubLoginCallback, facebookLoginCallback, kakaoLoginCallback } from './controller/userController';
 
 dotenv.config();
 
@@ -31,6 +32,16 @@ passport.use(
             scope: ['public_profile', 'email'],
         },
         facebookLoginCallback
+    )
+);
+
+passport.use(
+    new KakaoStrategy(
+        {
+            clientID: process.env.KK_SECRET,
+            callbackURL: 'https://soft-panther-73.serverless.social/oauth',
+        },
+        kakaoLoginCallback
     )
 );
 
