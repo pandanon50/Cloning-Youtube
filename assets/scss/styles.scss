@@ -1,13 +1,18 @@
 @import 'config/variable';
 @import 'config/reset.scss';
+@import 'config/utils.scss';
+
 @import 'main.scss';
+
 @import 'partials/header.scss';
 @import 'partials/footer.scss';
 @import 'partials/form.scss';
 @import 'partials/socialLogin.scss';
+@import 'partials/videoBlock.scss';
+
 @import 'pages/home.scss';
 @import 'pages/videoDetail.scss';
-@import 'partials/videoBlock.scss';
+@import 'pages/userDetail.scss';
 
 html,
 body,
