@@ -9,4 +9,7 @@ module.exports = {
         sourceType: 'module',
     },
     rules: { 'no-console': 'off' },
+    env: {
+        browser: true,
+    },
 };
