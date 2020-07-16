@@ -40,6 +40,7 @@ const KAKAO_CALLBACK = '/oauth';
 
 const API = '/api';
 const REFISTER_VIEW = '/:id/view';
+const ADD_COMMENT = '/:id/comment';
 
 // who come /api/xxx/view -> view = view +1
 
@@ -87,6 +88,7 @@ const routes = {
     kakoCallback: KAKAO_CALLBACK,
     api: API,
     registerView: REFISTER_VIEW,
+    addComment: ADD_COMMENT,
 };
 
 export default routes;

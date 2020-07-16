@@ -1,16 +1,20 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose';
 
 const commnetSchema = new mongoose.Schema({
-    text : {
-        type : String,
-        required : "Text is required"
+    text: {
+        type: String,
+        required: 'Text is required',
     },
-    createdAt : {
+    createdAt: {
         type: Date,
-        default : Date.now
-    }
+        default: Date.now,
+    },
+    creator: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User',
+    },
 });
 
-const model = mongoose.model("Comment",commnetSchema);
+const model = mongoose.model('Comment', commnetSchema);
 
 export default model;
