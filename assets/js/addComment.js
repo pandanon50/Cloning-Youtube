@@ -1,9 +1,8 @@
 import axios from 'axios';
-import { doc } from 'prettier';
 
 const addCommentForm = document.getElementById('jsAddComment');
 const commentList = document.getElementById('jsCommentList');
-const commentNumber = document.getElementById('jsCommnetNumber');
+const commentNumber = document.getElementById('jsCommentNumber');
 
 const increasNumber = () => {
     commentNumber.innerHTML = parseInt(commentNumber.innerHTML, 10) + 1;
