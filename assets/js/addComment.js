@@ -27,7 +27,7 @@ const sendComment = async (comment) => {
         },
     });
     if (response.status === 200) {
-        addCommnet(comment);
+        addComment(comment);
     }
 };
 
