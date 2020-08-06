@@ -5,15 +5,21 @@
     "main": "index.js",
     "scripts": {
         "dev:server": "nodemon --exec babel-node init.js --delay 2  --ignore 'scss' ",
-        "dev:assets": "set WEBPACK_ENV=development&&webpack -w",
-        "bulid:assets": "set WEBPACK_ENV=production&&webpack",
-        "tunnel": "lt -h http://serverless.social -p 8000"
+        "dev:assets": "cd src && set WEBPACK_ENV=development&&webpack -w",
+        "build:assets": "cd src && set WEBPACK_ENV=production&&webpack",
+        "build:server": "babel src --out-dir build --ignore 'src/assets','src/static','src/webpack.config.js'",
+        "copy": "xcopy src/static build && xcopy src/views build",
+        "build": "npm run build:server && npm run build:assets && npm run copy",
+        "prebuild": "rd /s \"build\"",
+        "tunnel": "lt -h http://serverless.social -p 8000",
+        "start": "node build/init.js"
     },
     "author": "oh",
     "license": "ISC",
     "dependencies": {
+        "@babel/cli": "^7.10.5",
         "@babel/core": "^7.9.6",
-        "@babel/node": "^7.8.7",
+        "@babel/node": "^7.10.5",
         "@babel/polyfill": "^7.10.1",
         "@babel/preset-env": "^7.9.6",
         "autoprefixer": "^9.8.0",
